@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="10dp"
+    android:layout_marginTop="40dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="250dp"
+        >
+        <EditText
+            android:id="@+id/login_account_edittext"
+            style="@style/edittext_model"
+            android:layout_weight="1"
+            android:layout_height="42dp"
+            android:textColor="@color/black"
+            android:hint="帐号/手机号/邮箱"
+            android:textColorHint="#86000000"
+            android:background="@color/white"
+            android:gravity="center"/>
+    </LinearLayout>
+    <View
+        android:layout_height="0.2dp"
+        android:layout_width="match_parent"
+        android:background="@color/Grey_200"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/login_password_edittext"
+            style="@style/edittext_model"
+            android:layout_weight="1"
+            android:hint="密码"
+            android:inputType="numberPassword"
+            android:textColorHint="#86000000"
+            android:textColor="@color/black"
+            android:layout_height="42dp"
+            android:gravity="center"
+            android:background="@color/white"/>
+
+    </LinearLayout>
+    <View
+        android:layout_height="0.2dp"
+        android:layout_width="match_parent"
+        android:background="@color/Grey_200"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="8dp"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="登 录"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:background="@drawable/bg_button"/>
+
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+        <Button
+            android:id="@+id/unremeber_password_buuton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="忘记密码？"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/login_button_model"
+            android:textColor="@color/blue"/>
+
+        <Button
+            android:id="@+id/regist_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="新用户注册"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/login_button_model"
+            android:textColor="@color/blue"/>
+    </RelativeLayout>
+
+</LinearLayout>
