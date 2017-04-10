@@ -2,6 +2,7 @@ package com.example.zhide.xiongmaoweixiao;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -14,7 +15,7 @@ import cn.bmob.v3.listener.LogInListener;
 import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UploadFileListener;
 
-public class RegistActivity extends BaseActivity {
+public class RegistActivity extends BaseActivity implements View.OnClickListener{
     EditText regist_userName;
     EditText regist_userPassword;
     EditText regist_userRepeatrPassword;
@@ -120,4 +121,16 @@ public class RegistActivity extends BaseActivity {
         return true;
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.regist_registbutton:
+                if (istrue()){
+                    registUser();
+                }
+                break;
+            default:
+                break;
+        }
+    }
 }
