@@ -32,6 +32,7 @@ public class RegistActivity extends BaseActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.regist_activity);
         initUI();
+        regist_registButton.setOnClickListener(this);
     }
     protected void initUI(){
         regist_userName = (EditText) findViewById(R.id.regist_username_edittext);

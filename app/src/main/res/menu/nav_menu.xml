@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+<group android:checkableBehavior="single">
+<item
+    android:id="@+id/nav_user"
+    android:title="用户认证"/>
+    <item
+        android:id="@+id/nav_iphone"
+        android:title="手机认证"/>
+    <item
+        android:id="@+id/nav_mycollection"
+        android:icon="@mipmap/mycollection_logo"
+        android:title="我的收藏"/>
+    <item
+        android:id="@+id/nav_myfriend"
+        android:icon="@mipmap/myfriend_logo"
+        android:title="我的好友"/>
+    <item
+        android:id="@+id/nav_myword"
+        android:icon="@mipmap/myword_logo"
+        android:title="我的发表"/>
+    <item
+        android:id="@+id/nav_myinformation"
+        android:title="我的账户"/>
+    <item
+        android:id="@+id/nav_yonghuguanli"
+        android:title="用户管理"/>
+</group>
 </menu>

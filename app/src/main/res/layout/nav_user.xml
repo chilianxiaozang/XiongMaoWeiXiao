@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <TextView
+        android:id="@+id/user_username"
+        android:layout_width="match_parent"
+        style="@style/textview_model"
+        android:text="junjun"
+        android:layout_marginLeft="8dp"
+        android:gravity="left"/>
+    <TextView
+        android:id="@+id/user_userintegral"
+        style="@style/textview_model"
+        android:layout_width="wrap_content"
+        android:textColor="@color/Grey_700"
+        android:layout_marginLeft="8dp"
+        android:gravity="left"
+        android:layout_below="@+id/user_username"/>
+    <TextView
+        android:id="@+id/user_userweibi"
+        style="@style/textview_model"
+        android:layout_width="wrap_content"
+        android:textColor="@color/Grey_700"
+        android:layout_marginLeft="8dp"
+        android:gravity="left"
+        android:layout_below="@+id/user_username"
+        android:layout_toRightOf="@+id/user_userintegral"/>
+    <TextView
+        android:id="@+id/user_userdesignation"
+        style="@style/textview_model"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/Teal"
+        android:text="小书童"
+        android:gravity="left"
+        android:layout_below="@+id/user_userintegral"/>
 
 </LinearLayout>
