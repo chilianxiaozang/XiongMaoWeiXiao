@@ -11,6 +11,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
@@ -18,21 +20,38 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 
 import java.util.ArrayList;
 
+import cn.bmob.v3.BmobUser;
+
 public class MainActivity extends BaseActivity {
+    private  static final int TAKE_PHOTO = 1;
+    private static final int CHOOSE_PHOTO = 2;
+    private static final int FLAG_CROP_PHONE = 3;
     private ArrayList<Fragment> fragments;
     private DrawerLayout mDrawerLayout;
     private BottomNavigationBar bottomNavigationBar;
     private NavigationView navigationView;
+    private ImageButton userImage;
+    private TextView userName;
+    private TextView userIntegral;
+    private  TextView userWeiBi;
+    private TextView userDesignation;
+    private User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+        user = BmobUser.getCurrentUser(User.class);
         initUI();
-        initFragment();
+//        setUserInformation();
         setUIFunction();
+
     }
     protected void initUI(){
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        userName = (TextView) findViewById(R.id.user_username);
+        userIntegral = (TextView) findViewById(R.id.user_userintegral);
+        userWeiBi = (TextView) findViewById(R.id.user_userweibi);
+        userDesignation = (TextView) findViewById(R.id.user_userdesignation);
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -82,6 +101,7 @@ public class MainActivity extends BaseActivity {
                 return true;
             }
         });
+        initFragment();
 //设置底部导航栏的选项
         bottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
         bottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
@@ -120,9 +140,15 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void onTabReselected(int position) {
-
             }
         });
+    }
+    protected void setUserInformation(){
+        String user_weibi = user.getUserweibi().toString().trim();
+        String user_integral = user.getUserIntegral().toString().trim();
+        userName.setText(user.getUsername());
+        userWeiBi.setText("微币："+user_weibi);
+        userIntegral.setText("积分："+user_integral);
     }
     private void initFragment(){
         fragments = new ArrayList<Fragment>();

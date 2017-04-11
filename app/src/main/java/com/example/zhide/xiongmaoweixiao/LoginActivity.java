@@ -71,6 +71,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                                         //       缓存用户的帐号密码
                                         Toast.makeText(LoginActivity.this,"登录成功",Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(LoginActivity.this,MainActivity.class));
+
                                     } else {
                                         Toast.makeText(LoginActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
                                     }
